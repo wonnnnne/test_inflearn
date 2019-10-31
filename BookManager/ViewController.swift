@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var genreOfBook: UITextField!
     
+    @IBOutlet var countLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let book1 = Book(name: "햄릿", genre: "비극", author: "세익스피어")
@@ -36,6 +39,8 @@ class ViewController: UIViewController {
 //        }else{
 //            print("찾으시는 책이 없습니다")
 //        }
+        
+        countLabel.text = "\(myBookManager.countBooks())"
     }
     
     @IBAction func showAllBooksAction(_ sender: Any) {
@@ -44,11 +49,34 @@ class ViewController: UIViewController {
     
     @IBAction func registerBook(_ sender: Any) {
         var bookTemp = Book()
+        bookTemp.name = titleOfBook.text!
+        bookTemp.author = authorOfBook.text!
+        bookTemp.genre = genreOfBook.text!
+        
+        myBookManager.registerBook(bookObject: bookTemp)
+        outPutTextView.text = "\"\(bookTemp.name!)\" has been registered"
+        countLabel.text = "\(myBookManager.countBooks())"
+
         
     }
     
     
+    @IBAction func searchBook(_ sender: Any) {
+        let resultBook = myBookManager.searchBook(name: titleOfBook.text!)
+        if resultBook != nil{
+            outPutTextView.text = resultBook
+        }else{
+            outPutTextView.text = "There is no book that you search"
+        }
+    }
+    
 
-
+    @IBAction func removeBook(_ sender: Any) {
+        
+        myBookManager.removeBook(name: titleOfBook.text!)
+        outPutTextView.text = "\"\(titleOfBook.text!)\"has been deleted"
+        countLabel.text = "\(myBookManager.countBooks())"
+    }
+    
 }
 

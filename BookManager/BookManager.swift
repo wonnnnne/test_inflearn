@@ -45,7 +45,7 @@ class BookManager{
     }
     func removeBook(name: String){
         for (index, value) in bookList.enumerated(){
-            if value.name! == name{
+            if value.name == name{
                 bookList.remove(at: index)
             }
         }

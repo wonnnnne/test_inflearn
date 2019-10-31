@@ -81,6 +81,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1xa-t9-3tr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWl-rI-vNe">
                                 <rect key="frame" x="177" y="262" width="57" height="30"/>
@@ -96,6 +99,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Remove"/>
+                                <connections>
+                                    <action selector="removeBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kr1-qV-UEQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBH-KY-dqg">
                                 <rect key="frame" x="118" y="316" width="171" height="30"/>
@@ -120,6 +126,7 @@
                     </view>
                     <connections>
                         <outlet property="authorOfBook" destination="kFg-ha-bG1" id="8Qh-ex-Uku"/>
+                        <outlet property="countLabel" destination="aeM-37-BIS" id="WsK-lZ-3OX"/>
                         <outlet property="genreOfBook" destination="7Fc-Ga-Gzv" id="yYY-gI-BGU"/>
                         <outlet property="outPutTextView" destination="qRF-Pp-vAB" id="c54-i5-TuW"/>
                         <outlet property="titleOfBook" destination="dOV-zA-gzL" id="NZf-Cc-KRr"/>
